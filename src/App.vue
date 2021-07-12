@@ -1,11 +1,26 @@
+<script lang="ts">
+import { defineComponent } from 'vue';
+import HelloWorld from './components/HelloWorld.vue'
+export default defineComponent({
+  components: {
+    HelloWorld
+  },
+  data() {
+    return {
+      selectedVoiceOverId: null,
+    }
+  },
+})
+</script>
+
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <HelloWorld
+    msg="Hello Vue 3 + TypeScript + Vite"
+    :voice-over-id="selectedVoiceOverId"
+    @select-voice-over-id="selectedVoiceOverId = $event"
+  />
 </template>
-
-<script lang="ts" setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <style>
 #app {
